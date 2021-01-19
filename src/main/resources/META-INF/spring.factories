@@ -1,0 +1,3 @@
+io.pivotal.cfenv.spring.boot.CfEnvProcessor=de.hdi.cfenv.s3.CfEnvS3Processor
+
+
