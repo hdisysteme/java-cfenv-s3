@@ -6,7 +6,7 @@
     <groupId>de.hdi.cfenv</groupId>
     <artifactId>java-cfenv-s3</artifactId>
     <description>Java CF Env S3 Support Library</description>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>0.0.3</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
