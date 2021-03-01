@@ -6,7 +6,7 @@
     <groupId>de.hdi.cfenv</groupId>
     <artifactId>java-cfenv-s3</artifactId>
     <description>Java CF Env S3 Support Library</description>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -67,7 +67,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/octocat/hello-world</url>
+            <url>https://maven.pkg.github.com/hdisysteme/java-cfenv-s3</url>
         </repository>
     </distributionManagement>
 </project>
