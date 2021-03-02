@@ -1,12 +1,17 @@
-name: Publish package to the Maven Central Repository and GitHub Packages
+name: Create Release and publish package to the Maven Central Repository and GitHub Packages
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number to release'
+        required: true
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+       - name: Prepare release
+         run: mvn --batch-mode release:prepare -Drelease-version ${{ github.event.inputs.version }}
 #      - name: Set up Java for publishing to Maven Central Repository
 #        uses: actions/setup-java@v1
 #        with:
@@ -15,7 +20,7 @@ jobs:
 #          server-username: MAVEN_USERNAME
 #          server-password: MAVEN_PASSWORD
 #      - name: Publish to the Maven Central Repository
-#        run: mvn --batch-mode deploy
+#        run: mvn --batch-mode release:perform
 #        env:
 #          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
 #          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
@@ -24,6 +29,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Publish to GitHub Packages
-        run: mvn --batch-mode deploy
+        run: mvn --batch-mode release:perform
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
