@@ -9,9 +9,16 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-       - name: Prepare release
-         run: mvn --batch-mode release:prepare -Drelease-version ${{ github.event.inputs.version }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java for publishing to GitHub Packages
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Create release and publish to GitHub Packages
+        run: mvn --batch-mode release:prepare release:perform -Drelease-version ${{ github.event.inputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - name: Set up Java for publishing to Maven Central Repository
 #        uses: actions/setup-java@v1
 #        with:
@@ -19,16 +26,8 @@ jobs:
 #          server-id: ossrh
 #          server-username: MAVEN_USERNAME
 #          server-password: MAVEN_PASSWORD
-#      - name: Publish to the Maven Central Repository
+#      - name: Create release and publish to the Maven Central Repository
 #        run: mvn --batch-mode release:perform
 #        env:
 #          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
 #          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      - name: Set up Java for publishing to GitHub Packages
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      - name: Publish to GitHub Packages
-        run: mvn --batch-mode release:perform
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
