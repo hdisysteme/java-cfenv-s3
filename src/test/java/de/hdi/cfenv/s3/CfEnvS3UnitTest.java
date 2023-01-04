@@ -9,7 +9,7 @@ import org.springframework.core.env.Environment;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
+import static org.mockito.MockitoAnnotations.openMocks;
 
 class CfEnvS3UnitTest {
 
@@ -26,7 +26,7 @@ class CfEnvS3UnitTest {
 
     @BeforeEach
     void setup() {
-        initMocks(this);
+        openMocks(this);
         this.prepareEnvironment();
     }
 
