@@ -6,13 +6,13 @@ import io.pivotal.cfenv.spring.boot.CfEnvProcessorProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.openMocks;
 
 class CfEnvS3ProcessorUnitTest {
 
@@ -34,7 +34,7 @@ class CfEnvS3ProcessorUnitTest {
 
     @BeforeEach
     void setup() {
-        MockitoAnnotations.initMocks(this);
+        openMocks(this);
     }
 
     @Test
