@@ -6,7 +6,7 @@
 
     <groupId>de.hdi.cfenv</groupId>
     <artifactId>java-cfenv-s3</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <name>Java CF Env S3 Support Library</name>
     <description>Library to obtain credentials of AWS/S3 in Cloudfoundry</description>
