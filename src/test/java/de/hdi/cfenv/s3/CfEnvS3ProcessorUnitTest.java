@@ -48,7 +48,7 @@ class CfEnvS3ProcessorUnitTest {
 
     @Test
     void testAcceptPathGetLabelReturnsTrue() {
-        when(cfService.existsByTagIgnoreCase("S2")).thenReturn(false);
+        when(cfService.existsByTagIgnoreCase("s3")).thenReturn(false);
         when(cfService.getLabel()).thenReturn("Label s3");
         when(cfService.getName()).thenReturn("any Name");
 
@@ -57,7 +57,7 @@ class CfEnvS3ProcessorUnitTest {
 
     @Test
     void testAcceptPathGetNameReturnsTrue() {
-        when(cfService.existsByTagIgnoreCase("S2")).thenReturn(false);
+        when(cfService.existsByTagIgnoreCase("s3")).thenReturn(false);
         when(cfService.getLabel()).thenReturn("any Label");
         when(cfService.getName()).thenReturn("S3 Name");
 
@@ -66,7 +66,7 @@ class CfEnvS3ProcessorUnitTest {
 
     @Test
     void testAcceptAllPathsReturnFalse() {
-        when(cfService.existsByTagIgnoreCase("S2")).thenReturn(false);
+        when(cfService.existsByTagIgnoreCase("s3")).thenReturn(false);
         when(cfService.getLabel()).thenReturn("any Label");
         when(cfService.getName()).thenReturn("S2 Name");
 
@@ -75,7 +75,7 @@ class CfEnvS3ProcessorUnitTest {
 
     @Test
     void testAcceptPathGetLabelReturnsNull() {
-        when(cfService.existsByTagIgnoreCase("S2")).thenReturn(false);
+        when(cfService.existsByTagIgnoreCase("s3")).thenReturn(false);
         when(cfService.getLabel()).thenReturn(null);
         when(cfService.getName()).thenReturn("S2 Name");
 
@@ -84,7 +84,7 @@ class CfEnvS3ProcessorUnitTest {
 
     @Test
     void testAcceptPathGetNameReturnsNull() {
-        when(cfService.existsByTagIgnoreCase("S2")).thenReturn(false);
+        when(cfService.existsByTagIgnoreCase("s3")).thenReturn(false);
         when(cfService.getLabel()).thenReturn("any Label");
         when(cfService.getName()).thenReturn(null);
 
