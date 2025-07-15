@@ -1,3 +1,5 @@
+__Attention: This library is no longer being actively developed!__
+
 # java-cfenv-s3
 
 This spring boot library allows easy access to the Cloud Foundry VCAP variables for an S3 bucket, without the values having to be stored as plain text.
